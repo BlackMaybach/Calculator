@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var secondNumber: EditText
     lateinit var result: TextView
 
-    lateinit var resultBtn:Button
+    lateinit var resultBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,28 +31,46 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    fun getResult() : String {
+
+    fun getResult(): String {
         val fNumber = firstNumber.text.toString().toInt()
         val sNumber = secondNumber.text.toString().toInt()
         val symbol = symbol.text.toString()
 
 
 
-        if(symbol == "+") {
+        if (symbol == "+") {
             return (fNumber + sNumber).toString()
         }
 
-        if(symbol == "-") {
+        if (symbol == "-") {
             return (fNumber - sNumber).toString()
         }
 
-        if(symbol == "*") {
+        if (symbol == "*") {
             return (fNumber * sNumber).toString()
         }
 
-        if(symbol == "/") {
+        if (symbol == "/") {
             return (fNumber / sNumber).toString()
         }
+
+        if (symbol == ">" || symbol == "<"){
+            return "Используйте другой символ"
+        }
+
+        if(symbol == "=") {
+            return "$fNumber = $sNumber"
+        }
+
+//        if (symbol == "<"){
+//            return "Используйте другой символ"
+//        }
+//
+//        if (symbol == ">"){
+//            return "Используйте другой символ"
+//        }
+
         return "Нет ответа"
-    }
+}
 }
